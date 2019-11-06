@@ -3,15 +3,9 @@ Survey
 .applyTheme("default");
 
 var json = {
-title: "American History",
-showProgressBar: "bottom",
-showTimerPanel: "top",
-maxTimeToFinishPage: 10,
-maxTimeToFinish: 25,
-firstPageIsStarted: true,
-startSurveyText: "Start Quiz",
-pages: [
-    {
+    title: "American History",
+    pages: [
+        {
         questions: [
             {
                 type: "radiogroup",
@@ -21,11 +15,8 @@ pages: [
                     "1750-1800", "1800-1850", "1850-1900", "1900-1950", "after 1950"
                 ],
                 correctAnswer: "1850-1900"
-            }
-        ]
-    }, {
-        questions: [
-            {
+        }, 
+        {
                 type: "radiogroup",
                 name: "libertyordeath",
                 title: "Who said 'Give me liberty or give me death?'",
@@ -34,12 +25,8 @@ pages: [
                     "John Hancock", "James Madison", "Patrick Henry", "Samuel Adams"
                 ],
                 correctAnswer: "Patrick Henry"
-            }
-        ]
-    }, {
-        maxTimeToFinish: 15,
-        questions: [
-            {
+        }, 
+        {
                 type: "radiogroup",
                 name: "magnacarta",
                 title: "What is the Magna Carta?",
@@ -50,8 +37,7 @@ pages: [
                 correctAnswer: "The foundation of the British parliamentary system"
             }
         ]
-    }
-],
+    }],
 completedHtml: "<h4>You have answered correctly <b>{correctedAnswers}</b> questions from <b>{questionCount}</b>.</h4>"
 };
 
@@ -60,7 +46,7 @@ window.survey = new Survey.Model(json);
 survey
 .onComplete
 .add(function (result) {
-    document.location = "indexthanks.html";
+    document.location = "singlethanks.html";
 });
 
 $("#surveyElement").Survey({model: survey});
